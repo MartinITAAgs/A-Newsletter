@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="resources/favicon.ico" type="image/x-icon">
+    <title>A Newsletter</title>
+</head>
+<body>
+    <main class="main">
+        <img src="resources/logo.svg" alt="">
+        <h1 class="title">Join our newsletter!</h1>
+        <p class="text">Keep up with our latest collections, exclusive deals, and special offers!
+        <br>We introduce a new collection every week, so stay tuned to snag the hottest items just for you.</p>
+    
+        <form class="format">
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe now</button>
+            <p id="error-message"></p>
+            <p>Your email is 100% confidential and won't send you any spam.</p>
+        </form>
+        <script> 
+            document.querySelector(".format").addEventListener("submit", function(event) { 
+                const emailInput = document.getElementById("email"); 
+                const errorMessage = document.getElementById("error-message"); 
+                if (!emailInput.checkValidity()) { 
+                    event.preventDefault(); 
+                    errorMessage.textContent = "Por favor ingresa un correo válido."; 
+                    errorMessage.style.color = "red"; } 
+                    else { errorMessage.textContent = "";    
+                    }
+                 }); 
+        </script>
+    </main>
+    <div class="author-info">Coded by <a href="#">Martín Ramírez</a></div>
+</body>
+</html>
